@@ -1,0 +1,40 @@
+Index: vzlogger-2022-08-20-cef19b16/modules/CompilerFlags.cmake
+===================================================================
+--- vzlogger-2022-08-20-cef19b16.orig/modules/CompilerFlags.cmake
++++ vzlogger-2022-08-20-cef19b16/modules/CompilerFlags.cmake
+@@ -8,7 +8,7 @@ if(NOT WIN32)
+     message(STATUS "using gcc compiler ${CMAKE_CXX_COMPILER_ID}")
+     include (CheckCXXSourceCompiles)
+ 
+-    set(CMAKE_CXX_FLAGS "${CXXFLAGS} -W -Wall -Wextra -Werror -Wnon-virtual-dtor -Wno-system-headers")
++    set(CMAKE_CXX_FLAGS "${CXXFLAGS} -W -Wall -Wextra -Wnon-virtual-dtor -Wno-system-headers")
+     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Winit-self -Wmissing-include-dirs -Wno-pragmas -Wredundant-decls")
+     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-unused-parameter -std=c++11")
+     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fpermissive")
+@@ -30,7 +30,7 @@ if(NOT WIN32)
+     # release flags
+     # Releases are made with the release build. Optimize code.
+     set(CMAKE_CXX_FLAGS_RELEASE "-O3 -Wno-unused-parameter")
+-    #set(CMAKE_CXX_FLAGS_RELEASE "-O3 -Werror -Wno-non-virtual-dtor")
++    #set(CMAKE_CXX_FLAGS_RELEASE "-O3 -Wno-non-virtual-dtor")
+     set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -Wno-redundant-decls")
+     #set(CMAKE_CXX_FLAGS_RELEASE "-O3 -Wno-non-virtual-dtor")
+ 
+@@ -57,7 +57,7 @@ if(NOT WIN32)
+     set(CMAKE_CXX_FLAGS_PROFILE "${CMAKE_CXX_FLAGS_PROFILE} -ftest-coverage")
+ 
+     # Experimental
+-    set(CMAKE_CXX_FLAGS_EXPERIMENTAL "-O0 -pg -g -ggdb -Wall -Werror -W -Wshadow")
++    set(CMAKE_CXX_FLAGS_EXPERIMENTAL "-O0 -pg -g -ggdb -Wall -W -Wshadow")
+     set(CMAKE_CXX_FLAGS_EXPERIMENTAL "${CMAKE_CXX_FLAGS_EXPERIMENTAL} -Wunused-variable")
+     set(CMAKE_CXX_FLAGS_EXPERIMENTAL "${CMAKE_CXX_FLAGS_EXPERIMENTAL} -Wunused-parameter")
+     set(CMAKE_CXX_FLAGS_EXPERIMENTAL "${CMAKE_CXX_FLAGS_EXPERIMENTAL} -Wunused-function")
+@@ -74,7 +74,7 @@ if(NOT WIN32)
+ 
+   if (${CMAKE_CXX_COMPILER_ID} MATCHES "Clang")
+     message(STATUS "using clang compiler ${CMAKE_CXX_COMPILER_ID}")
+-    set(CMAKE_CXX_FLAGS "${CXXFLAGS} -W -Wall -Wextra -Werror")
++    set(CMAKE_CXX_FLAGS "${CXXFLAGS} -W -Wall -Wextra")
+     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-parentheses")
+     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-unused-parameter")
+     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-unused-variable")
