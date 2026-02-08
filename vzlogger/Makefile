@@ -34,7 +34,7 @@ define Package/vzlogger/install
 	$(INSTALL_DIR) $(1)/usr/bin $(1)/etc/init.d $(1)/etc
 	$(CP) $(PKG_INSTALL_DIR)/usr/bin/vzlogger $(1)/usr/bin/
 	$(INSTALL_BIN) ./files/vzlogger.init $(1)/etc/init.d/vzlogger
-	$(INSTALL_CONF) ./files/vzlogger.conf $(1)/etc/
+	$(INSTALL_CONF) ./files/vzlogger.conf $(1)/etc/config/vzlogger.conf
 endef
 
 $(eval $(call BuildPackage,vzlogger))
